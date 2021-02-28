@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width = device-width, initial-scale = 1"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <title>Quản lý thông tin khách hàng</title>
+    <link rel="stylesheet" type="text/css" href="/css/home.css"/>
+</head>
+<body>
+<div class="header">
+    <div class="columnHeader">
+        <img src="/images/LogoDHTBank.jpg" alt="DHT Bank - Sustainable value"/>
+    </div>
+    <div class="columnHeader">
+        <h2 style="color: #ffd700">Ngân hàng Bưu chính Viễn thông DHT</h2>
+    </div>
+    <div class="columnHeader">
+        <div>
+            <h4 style="color: orange">Hỗ trợ trong nước: 0862 868 355 </h4>
+        </div>
+        <div>
+            <h4 style="color: orange">Hỗ trợ quốc tế: +84 862 868 355</h4>
+        </div>
+    </div>
+</div>
+<div class="content">
+    <div class="column2Admin">
+        <div style="text-align: center"><h4>Quản lý thông tin nhân viên</h4></div>
+        <form th:action="@{/admin/manage-employee-search}" method="post">
+            <div class="active-pink-3 active-pink-4 mb-4">
+                <input class="form-control" name="maNV" type="text" placeholder="Search" aria-label="Search">
+                <button type="submit">Tìm kiếm</button>
+            </div>
+        </form>
+        <div>
+            <table border="1px" style="width: 100%">
+                <tr>
+                    <th>STT</th>
+                    <th>Mã nhân viên</th>
+                    <th>Họ tên</th>
+                    <th>CMT</th>
+                    <th>Ngày sinh</th>
+                    <th>Địa chỉ</th>
+                    <th>Chức năng</th>
+                </tr>
+                <tr th:each="employee, state : ${employees}">
+                    <td th:text= "${state.index}+1"> </td>
+                    <td th:text="${employee.ma}"> </td>
+                    <td th:text="${employee.ten}"> </td>
+                    <td th:text="${employee.cmt}"> </td>
+                    <td th:text="${employee.ngaySinh}"> </td>
+                    <td th:text="${employee.diaChi}"> </td>
+                    <td>
+                        <a th:href="@{'/admin/luong?ma='+${employee.ma}}" methods="get"> Thông tin Lương </a>
+                    </td>
+                    <!--                        |<a th:href="@{'/delete-customer?index='+${state.index}}">Xóa</a></td>-->
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <div>
+        <h4 style="text-align: center">Thông tin thành viên</h4>
+    </div>
+    <div>
+        <div class="columnFooter">
+            <div>
+                <p>Nguyễn Văn Định</p>
+            </div>
+            <div>
+                <p>B16DCCN074</p>
+            </div>
+            <div>
+                <p>Dinhcuuhd@gmail.com</p>
+            </div>
+        </div>
+        <div class="columnFooter">
+            <div>
+                <p>Nguyễn Văn Hạnh</p>
+            </div>
+            <div>
+                <p>B16DCCN074</p>
+            </div>
+            <div>
+                <p>Dinhcuuhd@gmail.com</p>
+            </div>
+        </div>
+        <div class="columnFooter">
+            <div>
+                <p>Nguyễn Văn Thắng</p>
+            </div>
+            <div>
+                <p>B16DCCN074</p>
+            </div>
+            <div>
+                <p>Dinhcuuhd@gmail.com</p>
+            </div>
+        </div>
+        <div class="columnFooter">
+            <div>
+                <p>Nguyễn Văn Định</p>
+            </div>
+            <div>
+                <p>Nguyễn Văn Định</p>
+            </div>
+            <div>
+                <p>Nguyễn Văn Định</p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

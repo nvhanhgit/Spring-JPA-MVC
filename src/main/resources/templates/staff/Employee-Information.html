@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width = device-width, initial-scale = 1"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <title>Quản lý thông tin khách hàng</title>
+    <link rel="stylesheet" type="text/css" href="/css/home.css"/>
+</head>
+<body>
+<div class="header">
+    <div class="columnHeader">
+        <img src="/images/LogoDHTBank.jpg" alt="DHT Bank - Sustainable value"/>
+    </div>
+    <div class="columnHeader">
+        <h2 style="color: #ffd700">Ngân hàng Bưu chính Viễn thông DHT</h2>
+    </div>
+    <div class="columnHeader">
+        <div>
+            <h4 style="color: orange">Hỗ trợ trong nước: 0862 868 355 </h4>
+        </div>
+        <div>
+            <h4 style="color: orange">Hỗ trợ quốc tế: +84 862 868 355</h4>
+        </div>
+    </div>
+</div>
+
+    <div class="column2Admin">
+        <div>
+            <h4 style="text-align: center">Thông tin TKGui</h4>
+        </div>
+        <div>
+            <table border="1px" style="width: 100%">
+                <tr>
+                    <th>STT</th>
+                    <th>ID</th>
+                    <th>loai</th>
+                    <th>So Du</th>
+                    <th>Lai Suat</th>
+                    <th>ngay Tao</th>
+                    <th>Chức năng</th>
+                </tr>
+                <tr th:each="tkGui, state : ${tkGuis}">
+                    <td th:text= "${state.index}+1"> </td>
+                    <td th:text="${tkGui.ma}"> </td>
+                    <td th:text="${tkGui.loai}"> </td>
+                    <td th:text="${tkGui.soDu}"> </td>
+                    <td th:text="${tkGui.laiSuatThang}"> </td>
+                    <td th:text="${tkGui.ngayTao}"> </td>
+                    <td>
+                        <a th:href="@{'/admin/edit-TKGui?id='+${tkGui.id}}" methods="post"> edit</a> |
+                        <a th:href="@{'/admin/chuyen-khoan-TKGui?id='+${tkGui.ma}}" methods="post"> ChuyenKhoan</a>
+                    </td>
+                    <!--                        |<a th:href="@{'/delete-customer?index='+${state.index}}">Xóa</a></td>-->
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="column2Admin">
+<div>
+    <h4 style="text-align: center">Thông tin TKTinDung</h4>
+</div>
+<div>
+    <table border="1px" style="width: 100%">
+        <tr>
+            <th>STT</th>
+            <th>ID</th>
+            <th>loai</th>
+            <th>So Du</th>
+            <th>ngay Tao</th>
+            <th>Chức năng</th>
+        </tr>
+        <tr th:each="tkTinDung, state : ${tkTinDungs}">
+            <td th:text= "${state.index}+1"> </td>
+            <td th:text="${tkTinDung.ma}"> </td>
+            <td th:text="${tkTinDung.loai}"> </td>
+            <td th:text="${tkTinDung.soDu}"> </td>
+            <td th:text="${tkTinDung.ngayTao}"> </td>
+            <td>
+                <a th:href="@{'/admin/create-TKGui?id='+${tkTinDung.id}}" methods="post"> edit</a>
+            </td>
+            <!--                        |<a th:href="@{'/delete-customer?index='+${state.index}}">Xóa</a></td>-->
+        </tr>
+    </table>
+</div>
+</div>
+</body>
+</html>

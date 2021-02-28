@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/admin/TKGui}" method="post" th:object="${tkGui}">
+    <table border="0px" align="center" style="margin: 0px auto;">
+        <tr>
+            <td>Ma</td>
+            <td><input type="text" name="ma" th:value="${tkGui.ma}" required/></td>
+        </tr>
+        <tr>
+            <td>Loai</td>
+            <td><input type="text" name="loai" th:value="${tkGui.loai}" required/></td>
+        </tr>
+        <tr>
+            <td>So DU</td>
+            <td><input type="text" name="soDu" th:value="${tkGui.soDu}" required/></td>
+        </tr>
+        <tr>
+            <td>Lai Suat/Thang</td>
+            <td><input type="text" name="laiSuatThang" th:value="${tkGui.laiSuatThang}" required/></td>
+        </tr>
+        <tr>
+            <td>
+                <button type="submit" style="float: left">Lưu</button>
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

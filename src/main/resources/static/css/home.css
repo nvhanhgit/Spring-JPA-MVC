@@ -1,0 +1,70 @@
+* {
+    box-sizing: border-box;
+}
+
+.header {
+    background-color: cornflowerblue;
+}
+.columnHeader {
+    float: left;
+    text-align: center;
+    padding: 10px;
+    height: 110px;
+    width: 33.33333333%;
+    background-color: dodgerblue;
+}
+
+.column {
+    float: left;
+    padding: 10px;
+    height: 600px;
+    width: 50%;
+    background-color: lightgoldenrodyellow;
+}
+.column1Admin {
+    float: left;
+    text-align: center;
+    padding: 10px;
+    height: 600px;
+    width: 20%;
+    background-color: snow;
+}
+
+.column2Admin {
+    float: left;
+    text-align: center;
+    padding: 10px;
+    height: 600px;
+    width: 80%;
+    background-color: honeydew;
+}
+
+.footer{
+    background-color: gold;
+}
+
+.columnFooter{
+    float: left;
+    text-align: center;
+    padding: 10px;
+    height: 150px;
+    width: 25%;
+    background-color: grey;
+}
+
+.btn-group-vertical{
+    width: 100%;
+}
+
+.btn-primary{
+    width: 100%;
+    background-color: cornflowerblue;
+}
+
+.form1 {
+    width: 100%;
+}
+
+.form-control{
+    width: 80%;
+}

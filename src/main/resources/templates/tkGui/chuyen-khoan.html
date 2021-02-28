@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/admin/xac-nhan-chuyen-khoan}" method="get" >
+    <div>
+        <label>*From</label> <input type="text" name="fromMa" th:value="${fromMa}" readonly="readonly"/>
+    </div>
+    <div>
+        <label>To</label> <input type="text" name="toMa" required />
+    </div>
+    <div>
+        <label>so tien</label> <input type="text" name="amount"  required/>
+    </div>
+    <div>
+        <button type="submit" style="float: left">OK</button>
+    </div>
+</form>
+</body>
+</html>

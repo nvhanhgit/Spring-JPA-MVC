@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width = device-width, initial-scale = 1"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <title>Sửa thông tin khách hàng</title>
+    <link rel="stylesheet" type="text/css" href="/css/home.css"/>
+</head>
+<body>
+<div class="header">
+    <div class="columnHeader">
+        <img src="/images/LogoDHTBank.jpg" alt="DHT Bank - Sustainable value"/>
+    </div>
+    <div class="columnHeader">
+        <h2 style="color: #ffd700">Ngân hàng Bưu chính Viễn thông DHT</h2>
+    </div>
+    <div class="columnHeader">
+        <div>
+            <h4 style="color: orange">Hỗ trợ trong nước: 0862 868 355 </h4>
+        </div>
+        <div>
+            <h4 style="color: orange">Hỗ trợ quốc tế: +84 862 868 355</h4>
+        </div>
+    </div>
+</div>
+<div class="content">
+    <div class="column1Admin">
+        <div class="btn-group-vertical">
+            <form th:action="@{/admin/home}" method="get" class="form1">
+                <button class="btn btn-primary" type="submit">Trang chủ</button>
+            </form>
+            <form th:action="@{/admin/manage-staff}" method="get" class="form1">
+                <button type="submit" class="btn btn-primary">Quản lý thông tin nhân viên</button>
+            </form>
+            <form th:action="@{/admin/manage-customer}" method="get" class="form1">
+                <button type="submit" class="btn btn-primary">Quản lý thông tin khách hàng</button>
+            </form>
+            <form th:action="@{/admin/manage-TKGui}" method="get" class="form1">
+                <button type="submit" class="btn btn-primary">Quản lý tài khoản gửi</button>
+            </form>
+            <form th:action="@{/admin/manage-TKTinDung}" method="get" class="form1">
+                <button type="submit" class="btn btn-primary">Quản lý tài khoản tín dụng</button>
+            </form>
+        </div>
+    </div>
+    <div class="column2Admin">
+        <div style="text-align: center"><h4>Sửa thông tin khách hàng</h4></div>
+        <form th:action="@{/admin/edit-TKGui}" method="post" th:object="${tkGui}">
+            <div>
+                <label>*Id</label> <input type="text" name="id" th:value="${tkGui.id}" readonly="readonly"/>
+            </div>
+            <div>
+                <label>*Mã </label> <input type="text" name="ma" th:value="${tkGui.ma}" readonly="readonly"/>
+            </div>
+            <div>
+                <label>Loai</label> <input type="text" name="loai" th:value="${tkGui.loai}" required/>
+            </div>
+            <div>
+                <label>*So Du</label> <input type="text" name="soDu" th:value="${tkGui.soDu}" readonly="readonly"/>
+            </div>
+            <div>
+                <label>LaiSuat</label> <input type="text" name="laiSuatThang" th:value="${tkGui.laiSuatThang}" required/>
+            </div>
+            <div>
+                <label>*So Du Toi Thieu</label> <input type="text" name="soDuToiThieu" th:value="${tkGui.soDuToiThieu}" readonly="readonly"/>
+            </div>
+            <div>
+                <button type="submit" style="float: left">Lưu</button>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="footer">
+    <div>
+        <h4 style="text-align: center">Thông tin thành viên</h4>
+    </div>
+    <div>
+        <div class="columnFooter">
+            <div>
+                <p>Họ và tên</p>
+            </div>
+            <div>
+                <p>Mã sinh viên</p>
+            </div>
+            <div>
+                <p>Email</p>
+            </div>
+        </div>
+        <div class="columnFooter">
+            <div>
+                <p>Nguyễn Văn Định</p>
+            </div>
+            <div>
+                <p>B16DCCN074</p>
+            </div>
+            <div>
+                <p>Dinhcuuhd@gmail.com</p>
+            </div>
+        </div>
+        <div class="columnFooter">
+            <div>
+                <p>Nguyễn Văn Hạnh</p>
+            </div>
+            <div>
+                <p>B16DCCN130</p>
+            </div>
+            <div>
+                <p>Nvhanh1411@gmail.com</p>
+            </div>
+        </div>
+        <div class="columnFooter">
+            <div>
+                <p>Nguyễn Văn Thắng</p>
+            </div>
+            <div>
+                <p>B16DCCN074</p>
+            </div>
+            <div>
+                <p>Dinhcuuhd@gmail.com</p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

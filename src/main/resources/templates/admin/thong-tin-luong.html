@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width = device-width, initial-scale = 1"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <title>Sửa thông tin khách hàng</title>
+    <link rel="stylesheet" type="text/css" href="/css/home.css"/>
+</head>
+<body>
+<div class="header">
+    <div class="columnHeader">
+        <img src="/images/LogoDHTBank.jpg" alt="DHT Bank - Sustainable value"/>
+    </div>
+    <div class="columnHeader">
+        <h2 style="color: #ffd700">Ngân hàng Bưu chính Viễn thông DHT</h2>
+    </div>
+    <div class="columnHeader">
+        <div>
+            <h4 style="color: orange">Hỗ trợ trong nước: 0862 868 355 </h4>
+        </div>
+        <div>
+            <h4 style="color: orange">Hỗ trợ quốc tế: +84 862 868 355</h4>
+        </div>
+    </div>
+</div>
+
+<div class="column2Admin">
+    <div style="text-align: center"><h4>Thong Tin Luong</h4></div>
+    <form th:action="@{/admin/search-luong}" method="post">
+        <div>
+            <label>Ma Nhan Vien</label> <input type="text"  name="ma" th:value="${maNV}" readonly="readonly"/>
+        </div>
+        <div>
+            <label>Ten Nhan Vien</label> <input type="text" name="ten" th:value="${tenNV}" readonly="readonly"/>
+        </div>
+        <div>
+            <label>Start Date</label> <input type="date" name="startDate"  />
+        </div>
+        <div>
+            <label>End Date</label> <input type="date" name="endDate"  />
+        </div>
+        <div>
+            <button type="submit" style="float: left">Tim</button>
+        </div>
+    </form>
+
+</div>
+<div class="column2Admin">
+        <div>
+            <label>Luong</label> <input type="text"  th:value="${salary.salary}" readonly="readonly"/>
+        </div>
+        <div>
+            <label>So Tao Khoan Tao</label> <input type="text"  th:value="${salary.tongTKTao}" readonly="readonly"/>
+        </div>
+</div>
+<div class="footer">
+    <div>
+        <h4 style="text-align: center">Thông tin thành viên</h4>
+    </div>
+    <div>
+        <div class="columnFooter">
+            <div>
+                <p>Họ và tên</p>
+            </div>
+            <div>
+                <p>Mã sinh viên</p>
+            </div>
+            <div>
+                <p>Email</p>
+            </div>
+        </div>
+        <div class="columnFooter">
+            <div>
+                <p>Nguyễn Văn Định</p>
+            </div>
+            <div>
+                <p>B16DCCN074</p>
+            </div>
+            <div>
+                <p>Dinhcuuhd@gmail.com</p>
+            </div>
+        </div>
+        <div class="columnFooter">
+            <div>
+                <p>Nguyễn Văn Hạnh</p>
+            </div>
+            <div>
+                <p>B16DCCN130</p>
+            </div>
+            <div>
+                <p>Nvhanh1411@gmail.com</p>
+            </div>
+        </div>
+        <div class="columnFooter">
+            <div>
+                <p>Nguyễn Văn Thắng</p>
+            </div>
+            <div>
+                <p>B16DCCN074</p>
+            </div>
+            <div>
+                <p>Dinhcuuhd@gmail.com</p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
